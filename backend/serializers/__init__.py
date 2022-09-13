@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from .user_serializer import UserSerializer
 from .category_serializer import CategorySerializer
 from .external_reference_serializer import ExternalReferenceSerializer
 from .image_serializer import ImageSerializer
@@ -7,3 +8,4 @@ from .ingredient_serializer import IngredientSerializer
 from .unit_of_measurement_serializer import UnitOfMeasurementSerializer
 from .recipe_serializer import RecipeSerializer
 from .rlt_recipe_ingredient_serializer import RltRecipeIngredientSerializer
+from .user_recipe_list_serializer import UserRecipeListSerializer

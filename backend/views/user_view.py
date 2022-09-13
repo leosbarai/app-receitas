@@ -1,13 +1,9 @@
-from django.http import HttpResponse
-from backend.models import Profile
+from backend.views import *
+from backend.serializers import UserSerializer
+from backend.models import User
 
 
-def list_users_view(request):
-    user = request.GET.get("user")
-    role = request.GET.get("role")
-    email = request.GET.get("email")
-
-    users = Profile.objects.all()
-    print(users)
-
-    return HttpResponse("Listagem de 1 ou mais usuários.")
+class UserView(viewsets.ModelViewSet):
+    """Exibindo os Usuários"""
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
