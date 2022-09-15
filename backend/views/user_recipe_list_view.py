@@ -3,7 +3,7 @@ from backend.serializers import UserRecipeListSerializer
 from backend.models import Recipe
 
 
-class UserRecipeListView(generics.ListAPIView):
+class UserRecipeListViewSet(generics.ListAPIView):
     """Listando Receitas do Usuário"""
 
     def get_queryset(self):

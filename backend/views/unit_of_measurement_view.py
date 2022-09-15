@@ -3,7 +3,7 @@ from backend.serializers import UnitOfMeasurementSerializer
 from backend.models import UnitOfMeasurement
 
 
-class UnitOfMeasurementView(viewsets.ModelViewSet):
+class UnitOfMeasurementViewSet(viewsets.ModelViewSet):
     """Exibindo Unidades de Medida"""
     queryset = UnitOfMeasurement.objects.all()
     serializer_class = UnitOfMeasurementSerializer

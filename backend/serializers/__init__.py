@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .user_serializer import UserSerializer
+from .profile_serializer import ProfileSerializer
 from .category_serializer import CategorySerializer
 from .external_reference_serializer import ExternalReferenceSerializer
 from .image_serializer import ImageSerializer

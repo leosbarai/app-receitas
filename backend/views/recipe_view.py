@@ -3,7 +3,7 @@ from backend.serializers import RecipeSerializer
 from backend.models import Recipe
 
 
-class RecipeView(viewsets.ModelViewSet):
+class RecipeViewSet(viewsets.ModelViewSet):
     """Exibindo as Receitas"""
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer

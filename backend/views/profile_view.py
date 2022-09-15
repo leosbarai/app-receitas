@@ -1,11 +1,9 @@
-from django.http import HttpResponse
+from backend.views import *
+from backend.serializers import ProfileSerializer
+from backend.models import Profile
 
 
-def list_profile_view(request, id=None):
-    if id is None and request.user.is_authenticated:
-        id = request.user.id
-    elif not request.user.is_authenticated:
-        id = 0
-
-    return HttpResponse('<h1> Usuário de id %s! </h1>' % id)
-
+class ProfileViewSet(viewsets.ModelViewSet):
+    """Exibindo os Usuários"""
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer

@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
-
-from .user import User
+from .profile import Profile
 from .category import Category
 from .ingredient import Ingredient
 from .unit_of_measurement import UnitOfMeasurement

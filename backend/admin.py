@@ -2,14 +2,14 @@ from django.contrib import admin
 from .models import *
 
 
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'username', 'role')
-    list_display_links = ('id', 'username', 'role')
-    search_fields = ('username', 'email',)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'role')
+    list_display_links = ('id', 'user', 'role')
+    search_fields = ('user', 'email',)
     list_per_page = 20
 
 
-admin.site.register(User, UserAdmin)
+admin.site.register(Profile, ProfileAdmin)
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -64,9 +64,9 @@ admin.site.register(UnitOfMeasurement, UnitOfMeasureAdmin)
 
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ('id', 'recipe_title', 'efficiency', 'preparation_time', 'preparation_instructions', 'category',
-                    'active', 'username')
-    list_display_links = ('id', 'recipe_title', 'username')
-    search_fields = ('id', 'recipe_title', 'active', 'username', 'active',)
+                    'active', 'user')
+    list_display_links = ('id', 'recipe_title', 'user')
+    search_fields = ('id', 'recipe_title', 'active', 'user', 'active',)
     list_per_page = 20
 
 
