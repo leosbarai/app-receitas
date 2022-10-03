@@ -7,6 +7,7 @@ class ProfileAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'user', 'role')
     search_fields = ('user', 'email',)
     list_per_page = 20
+    ordering = ('user',)
 
 
 admin.site.register(Profile, ProfileAdmin)
@@ -16,7 +17,10 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'category', 'active')
     list_display_links = ('id', 'category')
     search_fields = ('category', 'active',)
+    list_filter = ('active',)
+    list_editable = ('active',)
     list_per_page = 20
+    ordering = ('category',)
 
 
 admin.site.register(Category, CategoryAdmin)
@@ -26,7 +30,10 @@ class ExternalReferenceAdmin(admin.ModelAdmin):
     list_display = ('id', 'link', 'recipe', 'active')
     list_display_links = ('id', 'link', 'recipe')
     search_fields = ('id', 'recipe', 'active',)
+    list_filter = ('active',)
+    list_editable = ('active',)
     list_per_page = 20
+    ordering = ('recipe',)
 
 
 admin.site.register(ExternalReference, ExternalReferenceAdmin)
@@ -36,7 +43,10 @@ class ImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'image', 'recipe', 'active')
     list_display_links = ('id', 'image', 'recipe')
     search_fields = ('id', 'recipe', 'active',)
+    list_filter = ('active',)
+    list_editable = ('active',)
     list_per_page = 20
+    ordering = ('recipe',)
 
 
 admin.site.register(Image, ImageAdmin)
@@ -46,7 +56,10 @@ class IngredientAdmin(admin.ModelAdmin):
     list_display = ('id', 'ingredient', 'active')
     list_display_links = ('id', 'ingredient')
     search_fields = ('id', 'ingredient', 'active',)
+    list_filter = ('active',)
+    list_editable = ('active',)
     list_per_page = 20
+    ordering = ('ingredient',)
 
 
 admin.site.register(Ingredient, IngredientAdmin)
@@ -56,7 +69,10 @@ class UnitOfMeasureAdmin(admin.ModelAdmin):
     list_display = ('id', 'unit_of_measurement', 'initials', 'active',)
     list_display_links = ('id', 'unit_of_measurement', 'initials')
     search_fields = ('unit_of_measurement', 'initials', 'active',)
+    list_filter = ('active',)
+    list_editable = ('active',)
     list_per_page = 20
+    ordering = ('unit_of_measurement',)
 
 
 admin.site.register(UnitOfMeasurement, UnitOfMeasureAdmin)
@@ -67,7 +83,10 @@ class RecipeAdmin(admin.ModelAdmin):
                     'active', 'user')
     list_display_links = ('id', 'recipe_title', 'user')
     search_fields = ('id', 'recipe_title', 'active', 'user', 'active',)
+    list_filter = ('active',)
+    list_editable = ('active',)
     list_per_page = 20
+    ordering = ('recipe_title',)
 
 
 admin.site.register(Recipe, RecipeAdmin)
@@ -77,7 +96,10 @@ class RltRecipeIngredientAdmin(admin.ModelAdmin):
     list_display = ('id', 'recipe', 'ingredient', 'unit_of_measurement', 'quantity', 'active')
     list_display_links = ('id', 'recipe', 'ingredient', 'unit_of_measurement')
     search_fields = ('recipe', 'ingredient', 'unit_of_measurement', 'quantity', 'active',)
+    list_filter = ('active',)
+    list_editable = ('active',)
     list_per_page = 20
+    ordering = ('recipe',)
 
 
 admin.site.register(RltRecipeIngredient, RltRecipeIngredientAdmin)

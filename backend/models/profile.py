@@ -7,9 +7,9 @@ class Profile(models.Model):
         (2, 'Usuario')
     )
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     role = models.IntegerField(choices=ROLE_CHOICE, max_length=1, blank=False, null=False, default=2)
-    email = models.EmailField(blank=False, max_length=30, null=False)
+    email = models.EmailField(blank=False, max_length=30, null=False, unique=True)
     active = models.BooleanField(default=True)
     token = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

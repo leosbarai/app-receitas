@@ -11,3 +11,5 @@ class UserRecipeListViewSet(generics.ListAPIView):
         return queryset
 
     serializer_class = UserRecipeListSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]

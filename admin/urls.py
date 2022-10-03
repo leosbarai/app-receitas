@@ -24,11 +24,11 @@ router.register('ingredient', IngredientViewSet, basename='Ingredients')
 router.register('unit_of_measurement', UnitOfMeasurementViewSet, basename='UnitOfMeasurements')
 router.register('recipe', RecipeViewSet, basename='Recipes')
 router.register('rlt_recipe_ingredient', RltRecipeIngredientViewSet, basename='RltRecipeIngredients')
-
+router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('users/<int:pk>/recipes/', UserRecipeListViewSet.as_view()),
+    path('user/<int:pk>/recipes/', UserRecipeListViewSet.as_view()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

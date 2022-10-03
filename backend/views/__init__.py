@@ -1,1 +1,4 @@
-from rest_framework import viewsets, generics
+from rest_framework import viewsets, filters, generics
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
