@@ -7,8 +7,6 @@ class RltRecipeIngredientViewSet(viewsets.ModelViewSet):
     """Exibindo o Relacionamento de Receita e Ingredientes"""
     queryset = RltRecipeIngredient.objects.all()
     serializer_class = RltRecipeIngredientSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def create(self, request):
         serializer = self.serializer_class(data=request.data)

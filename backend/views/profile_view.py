@@ -8,8 +8,6 @@ class ProfileViewSet(viewsets.ModelViewSet):
     """Exibindo os Usuários"""
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def create(self, request):
         serializer = self.serializer_class(data=request.data)
